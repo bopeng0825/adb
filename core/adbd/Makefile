@@ -22,8 +22,6 @@ SRCS+=  utils.c
 SRCS+=  base64.c
 
 VPATH+= ../libcutils
-VPATH+= ../include
-
 SRCS+= abort_socket.c
 SRCS+= socket_inaddr_any_server.c
 SRCS+= socket_local_client.c
@@ -46,6 +44,8 @@ CFLAGS += -DHAVE_TERMIO_H
 CFLAGS += -DADBD_NON_ANDROID
 CFLAGS += -I./
 CFLAGS += -I../include
+CFLAGS += -I../include/zipfile
+CFLAGS += -I../include/cutils
 
 LIBS+= -lc -lpthread -lz -lcrypto -lcrypt
 
