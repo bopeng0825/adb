@@ -22,6 +22,8 @@ SRCS+=  utils.c
 SRCS+=  base64.c
 
 VPATH+= ../libcutils
+VPATH+= ../include
+
 SRCS+= abort_socket.c
 SRCS+= socket_inaddr_any_server.c
 SRCS+= socket_local_client.c
