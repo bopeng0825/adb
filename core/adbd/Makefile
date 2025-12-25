@@ -22,8 +22,6 @@ SRCS+=  utils.c
 SRCS+=  base64.c
 
 VPATH+= ../libcutils
-VPATH+= ../include
-
 SRCS+= abort_socket.c
 SRCS+= socket_inaddr_any_server.c
 SRCS+= socket_local_client.c
@@ -52,3 +50,10 @@ LIBS+= -lc -lpthread -lz -lcrypto -lcrypt
 OBJS= $(patsubst %, %.o, $(basename $(SRCS)))
 
 all: adbd
+
+adbd: $(OBJS)
+	$(CC) -o $@ $(LDFLAGS) $(OBJS) $(LIBS)
+
+clean:
+	rm -rf $(OBJS) adbd
+
