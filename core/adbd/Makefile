@@ -52,9 +52,3 @@ LIBS+= -lc -lpthread -lz -lcrypto -lcrypt
 OBJS= $(patsubst %, %.o, $(basename $(SRCS)))
 
 all: adbd
-
-adbd: $(OBJS)
-	$(CC) -o $@ $(LDFLAGS) $(OBJS) $(LIBS)
-
-clean:
-	rm -rf $(OBJS) adbd
